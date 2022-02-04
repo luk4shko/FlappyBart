@@ -5,6 +5,12 @@ import pygame.mixer
 import pygame
 from pygame.locals import *
 
+
+programIcon = pygame.image.load('assets/sprites/icon.png')
+
+pygame.display.set_icon(programIcon)
+
+
 FPS = 30
 SCREENWIDTH  = 288
 SCREENHEIGHT = 512
@@ -93,7 +99,9 @@ def main():
     SOUNDS['point']  = pygame.mixer.Sound('assets/audio/point' + soundExt)
     SOUNDS['swoosh'] = pygame.mixer.Sound('assets/audio/swoosh' + soundExt)
     SOUNDS['wing']   = pygame.mixer.Sound('assets/audio/wing' + soundExt)
-
+    SOUNDS["music"]  = pygame.mixer.Sound("assets/audio/mart.ogg")
+    
+    SOUNDS['music'].play()
     while True:
         # select random background sprites
         randBg = random.randint(0, len(BACKGROUNDS_LIST) - 1)
